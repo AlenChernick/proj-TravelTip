@@ -23,12 +23,37 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
 }
 
 function addMarker(loc) {
-    var marker = new google.maps.Marker({
-        position: loc,
-        map: gMap,
-        title: 'Hello World!'
+      // Create the initial InfoWindow.
+  let infoWindow = new google.maps.InfoWindow({
+    content: "Click the map to set marker!",
+    position: loc,
+  });
+
+  infoWindow.open(gMap);
+
+  // Configure the click listener.
+  gMap.addListener("click", (mapsMouseEvent) => {
+    // Close the current InfoWindow.
+    infoWindow.close();
+
+    // Create a new InfoWindow.
+    infoWindow = new google.maps.InfoWindow({
+      position: mapsMouseEvent.latLng,
+      
     });
-    return marker;
+    infoWindow.setContent(
+      JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
+    );
+    infoWindow.open(gMap);
+    var marker = new google.maps.Marker({
+        position: mapsMouseEvent.latLng,
+        map: gMap,
+        title: 'Dont tuch me!!',
+        // icon: '😎',
+                
+    });
+  });
+    // return marker;
 }
 
 function panTo(lat, lng) {
