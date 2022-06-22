@@ -27,8 +27,6 @@ function goToLocation(lat, lng) {
     })
 }
 
-
-
 function addMarker(loc) {
     // Create the initial InfoWindow.
     let infoWindow = new google.maps.InfoWindow({
