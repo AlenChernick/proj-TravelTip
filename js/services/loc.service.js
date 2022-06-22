@@ -35,6 +35,8 @@ function onloadFromStroage() {
   }
 }
 
+
+
 function getLocs() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
