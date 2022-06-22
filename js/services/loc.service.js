@@ -7,6 +7,7 @@ export const locService = {
   onloadFromStroage,
 }
 window.onload = onloadFromStroage
+window.saveLocationToStorage = saveLocationToStorage
 
 // const locs
 let LOCATION_KEY = "locationsDB"
@@ -17,14 +18,13 @@ const locs = [
 ]
 
 function saveLocationToStorage(locationName) {
-
   let loc = mapService.getLatLeng()
   console.log(loc);
   locs.push({
     id: id++,
     name: locationName,
-    lat: latetiude,
-    longetiude: longetiude,
+    lat: loc.lat,
+    longetiude: loc.lng,
     createdAt: Date.now(),
     upDatedAt: Date.now(),
   })

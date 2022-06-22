@@ -31,9 +31,9 @@ function onAddMarker() {
     mapService.addMarker({ lat: 32.0749831, lng: 34.9120554 });
 }
 
-function onSaveLocation(){
-let locationName = prompt('Please provide place name:')
-locService.saveLocationToStorage(locationName)
+function onSaveLocation() {
+    let locationName = prompt('Please provide place name:')
+    locService.saveLocationToStorage(locationName)
 }
 
 function onGetLocs() {
