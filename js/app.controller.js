@@ -82,7 +82,6 @@ function onGetUserPos() {
         })
 }
 function onPanTo(x, y) {
-    console.log(userPos)
     console.log("Panning the Map")
     mapService.panTo(x, y)
 }
