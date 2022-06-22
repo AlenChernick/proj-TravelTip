@@ -61,7 +61,7 @@ function getLatLeng() {
         const lng = mapsMouseEvent.latLng.lng()
         gLocation = { lat, lng }
     })
-    console.log(gLocation);
+    // console.log(gLocation);
     return gLocation
 }
 

@@ -12,19 +12,16 @@ window.saveLocationToStorage = saveLocationToStorage
 // const locs
 let LOCATION_KEY = "locationsDB"
 let id = 1
-const locs = [
-  { name: "Greatplace", lat: 32.047104, lng: 34.832384 },
-  { name: "Neveragain", lat: 32.047201, lng: 34.832581 },
-]
+const locs = caschStorageService.loadFromStorage(LOCATION_KEY) || []
 
 function saveLocationToStorage(locationName) {
-  let loc = mapService.getLatLeng()
-  console.log(loc);
+  let {lat,lng} = mapService.getLatLeng()
+//   console.log(loc);
   locs.push({
     id: id++,
     name: locationName,
-    lat: loc.lat,
-    longetiude: loc.lng,
+    lat: lat,
+    longetiude: lng,
     createdAt: Date.now(),
     upDatedAt: Date.now(),
   })
@@ -33,7 +30,7 @@ function saveLocationToStorage(locationName) {
 }
 
 function onloadFromStroage() {
-  if (!locs.length || locs === {}) {
+  if (!locs.length || locs === []) {
     locs = caschStorageService.loadFromStorage(LOCATION_KEY)
   }
 }
