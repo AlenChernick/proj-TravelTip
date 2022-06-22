@@ -7,11 +7,8 @@ window.onPanTo = onPanTo
 window.onGetLocs = onGetLocs
 window.onGetUserPos = onGetUserPos
 window.onSaveLocation = onSaveLocation
-<<<<<<< HEAD
-=======
 window.onGoToLocation = onGoToLocation
 window.onDeleteLocation = onDeleteLocation
->>>>>>> 2be192bc5447e3738f0d152db8aa7f09ed9f931d
 
 function onInit() {
   mapService
@@ -50,15 +47,6 @@ function onDeleteLocation() {
 }
 
 function onGetLocs() {
-<<<<<<< HEAD
-  var str = ""
-  locService.getLocs().then((locs) => {
-    locs.map((loc, idx) => {
-      str += `
-         (${idx}) Location:${loc.name} ,lat:${loc.lat.toFixed(
-        2
-      )}, lang:${loc.longetiude.toFixed(2)}\n`
-=======
     var strHTML = ""
     locService.getLocs().then((locs) => {
         locs.map((loc) => {
@@ -77,14 +65,13 @@ function onGetLocs() {
         document.querySelector(".user-locations").innerHTML = strHTML
         // console.log(locs)
         // return locs
->>>>>>> 2be192bc5447e3738f0d152db8aa7f09ed9f931d
     })
     document.querySelector(".locs").innerText = str
     // console.log(locs)
     // return locs
-  })
-}
-var userPos
+  }
+
+
 
 function onGetUserPos() {
   getPosition()
@@ -98,7 +85,6 @@ function onGetUserPos() {
     })
 }
 function onPanTo(x,y) {
-  console.log(userPos)
   console.log("Panning the Map")
   mapService.panTo(x,y)
 }
