@@ -8,6 +8,7 @@ window.onGetLocs = onGetLocs
 window.onGetUserPos = onGetUserPos
 window.onSaveLocation = onSaveLocation
 window.onGoToLocation = onGoToLocation
+window.onDeleteLocation = onDeleteLocation
 
 function onInit() {
     mapService
@@ -46,18 +47,27 @@ function onGoToLocation(lat, lng) {
     mapService.goToLocation(lat, lng)
 }
 
+function onDeleteLocation() {
+    locService.deleteLocation()
+}
+
 function onGetLocs() {
     var strHTML = ""
     locService.getLocs().then((locs) => {
         locs.map((loc) => {
             strHTML += `
-            <div class="user-location">
-            Location: ${loc.name}\nlat: ${loc.lat.toFixed(2)}\nlang: ${loc.longetiude.toFixed(2)}\n
-            </div>
-            <button class="btn go-to-user-location" onclick="onGoToLocation(${loc.lat}, ${loc.longetiude})">Go</button>
+            <details class='user-location-details'>
+            <summary>${loc.name}</summary>
+            <p>
+              <ul>
+                <li class="clean-list">Corridnates: lat: ${loc.lat.toFixed(2)} , lng: ${loc.longetiude.toFixed(2)}</li>
+                <button onclick="onDeleteLocation()">Delete</button>
+                <button onclick="onGoToLocation(${loc.lat}, ${loc.longetiude})">Go To Location</button>
+                </p>
+          </details>
             `
         })
-        document.querySelector(".locs").innerHTML = strHTML
+        document.querySelector(".user-locations").innerHTML = strHTML
         // console.log(locs)
         // return locs
     })

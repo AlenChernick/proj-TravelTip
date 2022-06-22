@@ -5,6 +5,7 @@ export const locService = {
   getLocs,
   saveLocationToStorage,
   onloadFromStroage,
+  deleteLocation,
 }
 window.onload = onloadFromStroage
 window.saveLocationToStorage = saveLocationToStorage
@@ -43,4 +44,9 @@ function getLocs() {
       resolve(locs)
     }, 2000)
   })
+}
+
+
+function deleteLocation() {
+  locs.pop()
 }
