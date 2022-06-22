@@ -3,6 +3,7 @@ export const mapService = {
     addMarker,
     panTo,
     getLatLeng,
+    goToLocation,
 }
 var gMap
 var gLocation
@@ -18,6 +19,15 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
         console.log("Map!", gMap)
     })
 }
+
+
+function goToLocation(lat, lng) {
+    gMap = new google.maps.Map(document.querySelector("#map"), {
+        center: { lat, lng },
+        zoom: 15,
+    })
+}
+
 
 function addMarker(loc) {
     // Create the initial InfoWindow.
