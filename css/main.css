@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #34495e;
+}
+
+.header .title {
+  text-align: center;
+  font-size: 3.5em;
+  color: #3498db;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  transition: color 0.5s;
+  cursor: default;
+  animation: color-switch 5s infinite;
+  font-weight: bold;
+}
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons-container {
+  margin: 0 auto;
+  margin-block-start: 2rem;
+}
+
+.buttons-container .btn {
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: #2ecc71;
+  margin: 0.5rem;
+  transition: background-color 0.5s;
+  cursor: pointer;
+}
+
+.buttons-container .btn:hover {
+  background-color: #27ae5fb1;
+}
+
+.user-info {
+  text-align: center;
+  font-size: 1.9rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #e74c3c;
+}
+
+@keyframes color-switch {
+  from {
+    color: #3498db;
+  }
+
+  50% {
+    color: #34db87;
+  }
+
+  to {
+    color: #3498db;
+  }
+}
