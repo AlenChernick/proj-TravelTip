@@ -15,8 +15,8 @@ let id = 1
 const locs = caschStorageService.loadFromStorage(LOCATION_KEY) || []
 
 function saveLocationToStorage(locationName) {
-  let {lat,lng} = mapService.getLatLeng()
-//   console.log(loc);
+  let { lat, lng } = mapService.getLatLeng()
+  //   console.log(loc);
   locs.push({
     id: id++,
     name: locationName,
