@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/edinSavesLocations.css">
+    <link rel="stylesheet" href="css/edinSavesLocations.css" />
 
     <title>TravelTip</title>
   </head>
@@ -25,19 +25,8 @@
       </div>
       <div class="user-info">
         <p class="user-pos">You are at: <span class="user-pos"></span></p>
-        <p class="locs">Locations: <span class="locs"></span></p>
       </div>
-      <details>
-        <summary>Place name</summary>
-        <p>
-          <ul>
-            <li class="clean-list">Location Name:</li>
-            <li class="clean-list" onclick="onDeleteLocation()">Delete</li>
-            <li  class="clean-list" onclick="onNameEdit()">Edit name</li>
-            </p>
-      </details>
-
-      
+      <div class="user-locations"></div>
     </main>
     <script type="module" src="js/app.controller.js"></script>
   </body>
